@@ -22,7 +22,7 @@ ACR Viewer is an application that stays in the system tray and automatically pri
 | macOS (Intel) | Planned |
 | Linux x64 | Planned |
 
-- Supported Windows versions: 【要確認】
+- Supported Windows versions: Windows 11 or later
 - Automatic printing requires an application that can open PDF files (the default PDF app). Printing goes to the OS default printer
 
 ## Download

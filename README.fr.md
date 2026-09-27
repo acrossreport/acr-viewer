@@ -22,7 +22,7 @@ ACR Viewer est une application résidant dans la barre d'état système, qui imp
 | macOS (Intel) | Prévu |
 | Linux x64 | Prévu |
 
-- Versions de Windows prises en charge : 【要確認】
+- Versions de Windows prises en charge : Windows 11 ou version ultérieure
 - L'impression automatique nécessite une application capable d'ouvrir les PDF (application PDF par défaut). L'impression se fait sur l'imprimante par défaut de l'OS
 
 ## Téléchargement
