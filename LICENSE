@@ -16,10 +16,13 @@ binary form through https://github.com/acrossreport/acr-viewer.
    keys are described on the official website (https://acrossreport.com).
 
 3. Redistribution
-   You may redistribute the Software only in its original, unmodified form
-   (the distributed zip file as is), free of charge, together with this
-   LICENSE file. A license key may not be redistributed or shared with any
-   third party.
+   You may not redistribute the Software to any third party in any form,
+   including uploading it to other websites or bundling it with other
+   products. The Software is distributed only through
+   https://github.com/acrossreport/acr-viewer.
+   Copying the Software for installation on multiple computers within your
+   own organization is permitted.
+   A license key may not be transferred or shared with any third party.
 
 4. Restrictions
    You may not:
@@ -50,6 +53,10 @@ binary form through https://github.com/acrossreport/acr-viewer.
 9. Governing Law
    This license is governed by the laws of Japan.
 
+10. Support
+   The Software is provided without support. Support may be provided
+   separately upon request, under terms agreed on a case-by-case basis.
+
 Contact: across.support@gmail.com
 
 --------------------------------------------------------------------------
@@ -72,8 +79,11 @@ Copyright (c) Across Systems Corporation. All rights reserved.
    ライセンスキーの条件は公式サイト（https://acrossreport.com）をご覧ください。
 
 3. 再配布
-   本ソフトウェアは、改変しない元の形（配布 zip のまま）で、無償で、
-   本 LICENSE ファイルを添えた場合に限り再配布できます。
+   本ソフトウェアを、形態を問わず第三者へ再配布することを禁止します
+   （他のウェブサイトへの掲載、他の製品への同梱を含みます）。
+   本ソフトウェアの配布は https://github.com/acrossreport/acr-viewer
+   のみで行います。
+   なお、自組織内の複数のコンピュータへ設置するためのコピーは認めます。
    ライセンスキーを第三者へ譲渡・共有することはできません。
 
 4. 禁止事項
@@ -101,6 +111,10 @@ Copyright (c) Across Systems Corporation. All rights reserved.
 
 9. 準拠法
    本許諾は日本法に準拠します。
+
+10. サポート
+   本ソフトウェアにはサポートは含まれません。サポートをご希望の場合は、
+   個別にご相談ください。
 
 お問い合わせ：across.support@gmail.com
 
