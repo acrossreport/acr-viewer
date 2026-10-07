@@ -29,7 +29,7 @@ ACR Viewer は、システムトレイに常駐し、監視フォルダや HTTP 
 
 [Releases](https://github.com/acrossreport/acr-viewer/releases) から、お使いの OS 用のファイルをダウンロードしてください。
 
-- Windows x64:`acr_viewer-v0.0.1-win-x64.zip`
+- Windows x64:`acr_viewer-v0.1.0-win-x64.zip`
 
 ## インストールと起動
 

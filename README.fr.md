@@ -29,7 +29,7 @@ ACR Viewer est une application résidant dans la barre d'état système, qui imp
 
 Téléchargez le fichier correspondant à votre OS depuis les [Releases](https://github.com/acrossreport/acr-viewer/releases).
 
-- Windows x64 : `acr_viewer-v0.0.1-win-x64.zip`
+- Windows x64 : `acr_viewer-v0.1.0-win-x64.zip`
 
 ## Installation et lancement
 
