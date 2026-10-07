@@ -29,7 +29,7 @@ ACR Viewer is an application that stays in the system tray and automatically pri
 
 Download the file for your OS from [Releases](https://github.com/acrossreport/acr-viewer/releases).
 
-- Windows x64: `acr_viewer-v0.0.1-win-x64.zip`
+- Windows x64: `acr_viewer-v0.1.0-win-x64.zip`
 
 ## Installation and Launch
 
