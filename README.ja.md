@@ -17,35 +17,60 @@ ACR Viewer は、システムトレイに常駐し、監視フォルダや HTTP 
 
 | OS | 状況 |
 |---|---|
-| Windows x64 | 対応(本リリース) |
+| Windows x64 | 対応 |
+| Linux x64 | 対応 |
 | macOS(Apple Silicon) | 対応予定 |
 | macOS(Intel) | 対応予定 |
-| Linux x64 | 対応予定 |
+
+### Windows
 
 - 対応する Windows のバージョン:Windows 11 以上
 - 自動印字には、PDF を開けるアプリ(PDF の既定アプリ)が必要です。印刷先は OS の既定プリンタです
+
+### Linux
+
+- 対応:Ubuntu 24.04 以上(x64)
+- 次のライブラリが必要です。入っていない場合は、次のコマンドでインストールしてください
+
+```
+sudo apt install libgtk-3-0 libxdo3 libayatana-appindicator3-1
+```
+
+- 印字は OS の印刷の仕組み(CUPS の `lp` コマンド)で行います。OS に既定のプリンタが設定されていない場合は、設定画面の「印刷先プリンタ名」にプリンタ名を入力してください。登録されているプリンタ名は `lpstat -p` で確認できます
+- トレイのアイコンは、画面上部のバーに表示されます。Ubuntu 以外の GNOME では、AppIndicator の拡張機能が必要です。アイコンが表示されない場合も ACR Viewer は動いていて、ブラウザで `http://localhost:8765/` を開けば設定画面を使えます
 
 ## ダウンロード
 
 [Releases](https://github.com/acrossreport/acr-viewer/releases) から、お使いの OS 用のファイルをダウンロードしてください。
 
 - Windows x64:`acr_viewer-v0.1.0-win-x64.zip`
+- Linux x64:`acr_viewer-v0.1.0-linux-x64.zip`
 
 ## インストールと起動
+
+### Windows
 
 1. ダウンロードした zip を任意のフォルダに展開します
 2. `acr_viewer.exe` を実行します。システムトレイにアイコンが表示されます
 3. トレイアイコンのメニューから「Web設定画面を開く」を選ぶと、ブラウザで設定画面が開きます(`http://localhost:8765/`)
 
-初回起動時に、次のフォルダが「ドキュメント」の下に自動で作られます(設定画面で変更できます)。
+### Linux
+
+1. ダウンロードした zip を任意のフォルダに展開します
+2. 端末でそのフォルダに移動し、`./acr_viewer` を実行します。画面上部のバーにアイコンが表示されます
+3. アイコンをクリックし、メニューから「Web設定画面を開く」を選ぶと、ブラウザで設定画面が開きます(`http://localhost:8765/`)
+
+### フォルダ
+
+初回起動時に、次のフォルダが「ドキュメント」(Linux は `~/Documents`)の下に自動で作られます。設定画面で変更できます。
 
 | フォルダ | 役割 |
 |---|---|
-| `AcrViewer\Watch` | 監視フォルダ(ここにファイルを置く) |
-| `AcrViewer\Templates` | デザイン定義フォルダ |
-| `AcrViewer\Output` | PDF / PNG の保存先 |
-| `AcrViewer\Processed` | 処理済みファイルの移動先 |
-| `AcrViewer\Error` | 処理できなかったデータの移動先 |
+| `AcrViewer/Watch` | 監視フォルダ(ここにファイルを置く) |
+| `AcrViewer/Templates` | デザイン定義フォルダ |
+| `AcrViewer/Output` | PDF / PNG の保存先 |
+| `AcrViewer/Processed` | 処理済みファイルの移動先 |
+| `AcrViewer/Error` | 処理できなかったデータの移動先 |
 
 ## トレイメニュー
 
@@ -94,8 +119,11 @@ ACR Viewer は、システムトレイに常駐し、監視フォルダや HTTP 
 ### 出力ファイル名
 
 ```
-yyyymmddhhmmss_定義名.pdf
+yyyymmddhhmmss_定義名.pdf   … PDF
+yyyymmddhhmmss_定義名.zip   … PNG(全ページを1つの ZIP にまとめたもの)
 ```
+
+PNG は、ACR CLI と同じ ACR-PNG-PACKAGE 形式の ZIP ファイル1つで保存します。ZIP の中には `manifest.json` と、`pages/001.png`・`pages/002.png`… が入っています。
 
 ### HTTP API
 
@@ -103,6 +131,17 @@ yyyymmddhhmmss_定義名.pdf
   - `template` を省略した場合は、`data` の `Parameters.TemplateFile` でデザイン定義フォルダから定義を読みます
 
 HTTP サーバは `0.0.0.0` で待ち受けます。社外のネットワークからアクセスできない環境でお使いください。
+
+## トラブル調査(ログ)
+
+ログは既定では出力しません。調査のためにログを出す場合は、ACR Viewer を終了し、次の設定ファイルの `"debug_log": false` を `"debug_log": true` に書き換えてから、もう一度起動してください。Linux では端末から起動すると、その端末にログが表示されます。調査が終わったら `false` に戻してください。
+
+| OS | 設定ファイル |
+|---|---|
+| Windows | `%APPDATA%\AcrViewer\config.json` |
+| Linux | `~/.config/AcrViewer/config.json` |
+
+`"debug_log"` の項目がない場合は、追加してください。
 
 ## 出力について
 

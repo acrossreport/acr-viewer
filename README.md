@@ -17,35 +17,60 @@ ACR Viewer is an application that stays in the system tray and automatically pri
 
 | OS | Status |
 |---|---|
-| Windows x64 | Supported (this release) |
+| Windows x64 | Supported |
+| Linux x64 | Supported |
 | macOS (Apple Silicon) | Planned |
 | macOS (Intel) | Planned |
-| Linux x64 | Planned |
+
+### Windows
 
 - Supported Windows versions: Windows 11 or later
 - Automatic printing requires an application that can open PDF files (the default PDF app). Printing goes to the OS default printer
+
+### Linux
+
+- Supported: Ubuntu 24.04 or later (x64)
+- The following libraries are required. If they are not installed, install them with:
+
+```
+sudo apt install libgtk-3-0 libxdo3 libayatana-appindicator3-1
+```
+
+- Printing uses the OS printing system (CUPS, the `lp` command). If no default printer is set in the OS, enter the printer name in "Printer name" on the settings page. You can check registered printer names with `lpstat -p`
+- The tray icon appears in the top bar of the screen. On GNOME desktops other than Ubuntu, the AppIndicator extension is required. Even if the icon does not appear, ACR Viewer is running, and you can open the settings page at `http://localhost:8765/` in your browser
 
 ## Download
 
 Download the file for your OS from [Releases](https://github.com/acrossreport/acr-viewer/releases).
 
 - Windows x64: `acr_viewer-v0.1.0-win-x64.zip`
+- Linux x64: `acr_viewer-v0.1.0-linux-x64.zip`
 
 ## Installation and Launch
+
+### Windows
 
 1. Extract the downloaded zip to any folder
 2. Run `acr_viewer.exe`. An icon appears in the system tray
 3. Choose "Open Web Settings" from the tray icon menu to open the settings page in your browser (`http://localhost:8765/`)
 
-On first launch, the following folders are created automatically under "Documents" (you can change them on the settings page).
+### Linux
+
+1. Extract the downloaded zip to any folder
+2. In a terminal, move to that folder and run `./acr_viewer`. An icon appears in the top bar of the screen
+3. Click the icon and choose "Open Web Settings" from the menu to open the settings page in your browser (`http://localhost:8765/`)
+
+### Folders
+
+On first launch, the following folders are created automatically under "Documents" (Linux: `~/Documents`). You can change them on the settings page.
 
 | Folder | Purpose |
 |---|---|
-| `AcrViewer\Watch` | Watch folder (drop files here) |
-| `AcrViewer\Templates` | Design definition folder |
-| `AcrViewer\Output` | PDF / PNG output |
-| `AcrViewer\Processed` | Processed files |
-| `AcrViewer\Error` | Data that could not be processed |
+| `AcrViewer/Watch` | Watch folder (drop files here) |
+| `AcrViewer/Templates` | Design definition folder |
+| `AcrViewer/Output` | PDF / PNG output |
+| `AcrViewer/Processed` | Processed files |
+| `AcrViewer/Error` | Data that could not be processed |
 
 ## Tray Menu
 
@@ -94,8 +119,11 @@ If a `.template.json` with the same name is in the watch folder, Method 2 takes 
 ### Output file name
 
 ```
-yyyymmddhhmmss_definitionname.pdf
+yyyymmddhhmmss_definitionname.pdf   … PDF
+yyyymmddhhmmss_definitionname.zip   … PNG (all pages in one ZIP)
 ```
+
+PNG output is saved as a single ZIP file in the ACR-PNG-PACKAGE format (the same format as ACR CLI). The ZIP contains `manifest.json` and `pages/001.png`, `pages/002.png`, and so on.
 
 ### HTTP API
 
@@ -103,6 +131,17 @@ yyyymmddhhmmss_definitionname.pdf
   - If `template` is omitted, the definition is read from the design definition folder using `Parameters.TemplateFile` in `data`
 
 The HTTP server listens on `0.0.0.0`. Use it in an environment that cannot be accessed from outside networks.
+
+## Troubleshooting (Logs)
+
+Logs are not output by default. To output logs for troubleshooting, exit ACR Viewer, change `"debug_log": false` to `"debug_log": true` in the settings file below, and start ACR Viewer again. On Linux, start it from a terminal; logs appear in that terminal. After troubleshooting, set it back to `false`.
+
+| OS | Settings file |
+|---|---|
+| Windows | `%APPDATA%\AcrViewer\config.json` |
+| Linux | `~/.config/AcrViewer/config.json` |
+
+If `"debug_log"` is not in the file, add it.
 
 ## About Output
 
