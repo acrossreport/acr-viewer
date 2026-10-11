@@ -20,7 +20,7 @@ ACR Viewer est une application résidant dans la barre d'état système, qui imp
 | Windows x64 | Pris en charge |
 | Linux x64 | Pris en charge |
 | macOS (Apple Silicon) | Pris en charge |
-| macOS (Intel) | Prévu |
+| macOS (Intel) | Pris en charge |
 
 ### Windows
 
@@ -41,7 +41,7 @@ sudo apt install libgtk-3-0 libxdo3 libayatana-appindicator3-1
 
 ### macOS
 
-- Pris en charge : macOS 11 (Big Sur) ou version ultérieure, Apple Silicon (arm64)
+- Pris en charge : macOS 11 (Big Sur) ou version ultérieure, Apple Silicon (arm64) et Intel (x64)
 - L'impression utilise le système d'impression de l'OS (CUPS, commande `lp`), comme sous Linux. Si aucune imprimante par défaut n'est définie dans l'OS, saisissez le nom de l'imprimante dans « Nom de l'imprimante » de la page de réglages
 - L'application n'est pas notarisée : au premier lancement, Gatekeeper de macOS affichera un avertissement indiquant qu'elle provient d'un « développeur non identifié ». Voir [Installation et lancement](#macos-1) ci-dessous
 
@@ -52,6 +52,7 @@ Téléchargez le fichier correspondant à votre OS depuis les [Releases](https:/
 - Windows x64 : `acr_viewer-v0.1.0-win-x64.zip`
 - Linux x64 : `acr_viewer-v0.1.0-linux-x64.zip`
 - macOS (Apple Silicon) : `acr_viewer-v0.1.0-osx-arm64.zip`
+- macOS (Intel) : `acr_viewer-v0.1.0-osx-x64.zip`
 
 ## Installation et lancement
 
