@@ -20,7 +20,7 @@ ACR Viewer は、システムトレイに常駐し、監視フォルダや HTTP 
 | Windows x64 | 対応 |
 | Linux x64 | 対応 |
 | macOS(Apple Silicon) | 対応 |
-| macOS(Intel) | 対応予定 |
+| macOS(Intel) | 対応 |
 
 ### Windows
 
@@ -41,7 +41,7 @@ sudo apt install libgtk-3-0 libxdo3 libayatana-appindicator3-1
 
 ### macOS
 
-- 対応:macOS 11(Big Sur)以上、Apple Silicon(arm64)
+- 対応:macOS 11(Big Sur)以上、Apple Silicon(arm64)およびIntel(x64)
 - 印字は Linux と同じく OS の印刷の仕組み(CUPS の `lp` コマンド)で行います。OS に既定のプリンタが設定されていない場合は、設定画面の「印刷先プリンタ名」にプリンタ名を入力してください
 - 公証(notarization)を受けていないため、初回起動時に macOS のGatekeeperが「開発元が未確認」と警告します。対処方法は下記の[インストールと起動](#macos-1)をご覧ください
 
@@ -52,6 +52,7 @@ sudo apt install libgtk-3-0 libxdo3 libayatana-appindicator3-1
 - Windows x64:`acr_viewer-v0.1.0-win-x64.zip`
 - Linux x64:`acr_viewer-v0.1.0-linux-x64.zip`
 - macOS(Apple Silicon):`acr_viewer-v0.1.0-osx-arm64.zip`
+- macOS(Intel):`acr_viewer-v0.1.0-osx-x64.zip`
 
 ## インストールと起動
 
