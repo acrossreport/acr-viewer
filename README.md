@@ -19,7 +19,7 @@ ACR Viewer is an application that stays in the system tray and automatically pri
 |---|---|
 | Windows x64 | Supported |
 | Linux x64 | Supported |
-| macOS (Apple Silicon) | Planned |
+| macOS (Apple Silicon) | Supported |
 | macOS (Intel) | Planned |
 
 ### Windows
@@ -39,12 +39,19 @@ sudo apt install libgtk-3-0 libxdo3 libayatana-appindicator3-1
 - Printing uses the OS printing system (CUPS, the `lp` command). If no default printer is set in the OS, enter the printer name in "Printer name" on the settings page. You can check registered printer names with `lpstat -p`
 - The tray icon appears in the top bar of the screen. On GNOME desktops other than Ubuntu, the AppIndicator extension is required. Even if the icon does not appear, ACR Viewer is running, and you can open the settings page at `http://localhost:8765/` in your browser
 
+### macOS
+
+- Supported: macOS 11 (Big Sur) or later, Apple Silicon (arm64)
+- Printing uses the OS printing system (CUPS, the `lp` command), the same as Linux. If no default printer is set in the OS, enter the printer name in "Printer name" on the settings page
+- The app is not notarized, so macOS Gatekeeper will warn that it is "from an unidentified developer" on first launch. See [Installation and Launch](#macos-1) below
+
 ## Download
 
 Download the file for your OS from [Releases](https://github.com/acrossreport/acr-viewer/releases).
 
 - Windows x64: `acr_viewer-v0.1.0-win-x64.zip`
 - Linux x64: `acr_viewer-v0.1.0-linux-x64.zip`
+- macOS (Apple Silicon): `acr_viewer-v0.1.0-osx-arm64.zip`
 
 ## Installation and Launch
 
@@ -59,6 +66,12 @@ Download the file for your OS from [Releases](https://github.com/acrossreport/ac
 1. Extract the downloaded zip to any folder
 2. In a terminal, move to that folder and run `./acr_viewer`. An icon appears in the top bar of the screen
 3. Click the icon and choose "Open Web Settings" from the menu to open the settings page in your browser (`http://localhost:8765/`)
+
+### macOS
+
+1. Extract the downloaded zip and move `AcrViewer.app` to any folder (e.g. `/Applications`)
+2. The app is not notarized, so double-clicking it shows a warning that it is "from an unidentified developer" and refuses to open. Instead, right-click (or Control-click) `AcrViewer.app`, choose **Open**, then click **Open** again in the dialog. This is only needed the first time
+3. An icon appears in the menu bar at the top of the screen (the app does not appear in the Dock or App Switcher). Click the icon and choose "Open Web Settings" from the menu to open the settings page in your browser (`http://localhost:8765/`)
 
 ### Folders
 
@@ -140,8 +153,9 @@ Logs are not output by default. To output logs for troubleshooting, exit ACR Vie
 |---|---|
 | Windows | `%APPDATA%\AcrViewer\config.json` |
 | Linux | `~/.config/AcrViewer/config.json` |
+| macOS | `~/Library/Application Support/AcrViewer/config.json` |
 
-If `"debug_log"` is not in the file, add it.
+If `"debug_log"` is not in the file, add it. On macOS, launch `AcrViewer.app/Contents/MacOS/AcrViewer` from a terminal to see the logs there.
 
 ## About Output
 
