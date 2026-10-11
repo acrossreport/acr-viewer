@@ -19,7 +19,7 @@ ACR Viewer est une application résidant dans la barre d'état système, qui imp
 |---|---|
 | Windows x64 | Pris en charge |
 | Linux x64 | Pris en charge |
-| macOS (Apple Silicon) | Prévu |
+| macOS (Apple Silicon) | Pris en charge |
 | macOS (Intel) | Prévu |
 
 ### Windows
@@ -39,12 +39,19 @@ sudo apt install libgtk-3-0 libxdo3 libayatana-appindicator3-1
 - L'impression utilise le système d'impression de l'OS (CUPS, commande `lp`). Si aucune imprimante par défaut n'est définie dans l'OS, saisissez le nom de l'imprimante dans « Nom de l'imprimante » de la page de réglages. Vous pouvez vérifier les noms des imprimantes enregistrées avec `lpstat -p`
 - L'icône apparaît dans la barre supérieure de l'écran. Sur les bureaux GNOME autres qu'Ubuntu, l'extension AppIndicator est nécessaire. Même si l'icône n'apparaît pas, ACR Viewer fonctionne et vous pouvez ouvrir la page de réglages à l'adresse `http://localhost:8765/` dans le navigateur
 
+### macOS
+
+- Pris en charge : macOS 11 (Big Sur) ou version ultérieure, Apple Silicon (arm64)
+- L'impression utilise le système d'impression de l'OS (CUPS, commande `lp`), comme sous Linux. Si aucune imprimante par défaut n'est définie dans l'OS, saisissez le nom de l'imprimante dans « Nom de l'imprimante » de la page de réglages
+- L'application n'est pas notarisée : au premier lancement, Gatekeeper de macOS affichera un avertissement indiquant qu'elle provient d'un « développeur non identifié ». Voir [Installation et lancement](#macos-1) ci-dessous
+
 ## Téléchargement
 
 Téléchargez le fichier correspondant à votre OS depuis les [Releases](https://github.com/acrossreport/acr-viewer/releases).
 
 - Windows x64 : `acr_viewer-v0.1.0-win-x64.zip`
 - Linux x64 : `acr_viewer-v0.1.0-linux-x64.zip`
+- macOS (Apple Silicon) : `acr_viewer-v0.1.0-osx-arm64.zip`
 
 ## Installation et lancement
 
@@ -59,6 +66,12 @@ Téléchargez le fichier correspondant à votre OS depuis les [Releases](https:/
 1. Extrayez le fichier zip téléchargé dans le dossier de votre choix
 2. Dans un terminal, placez-vous dans ce dossier et lancez `./acr_viewer`. Une icône apparaît dans la barre supérieure de l'écran
 3. Cliquez sur l'icône et choisissez « Ouvrir les paramètres Web » dans le menu pour ouvrir la page de réglages dans le navigateur (`http://localhost:8765/`)
+
+### macOS
+
+1. Extrayez le fichier zip téléchargé et déplacez `AcrViewer.app` dans le dossier de votre choix (par ex. `/Applications`)
+2. L'application n'étant pas notarisée, un double-clic affichera un avertissement indiquant qu'elle provient d'un « développeur non identifié » et refusera de s'ouvrir. À la place, faites un clic droit (ou Ctrl-clic) sur `AcrViewer.app`, choisissez **Ouvrir**, puis cliquez à nouveau sur **Ouvrir** dans la boîte de dialogue. Cette étape n'est nécessaire qu'au premier lancement
+3. Une icône apparaît dans la barre de menus en haut de l'écran (l'application n'apparaît ni dans le Dock ni dans le sélecteur d'applications). Cliquez sur l'icône et choisissez « Ouvrir les paramètres Web » dans le menu pour ouvrir la page de réglages dans le navigateur (`http://localhost:8765/`)
 
 ### Dossiers
 
@@ -140,8 +153,9 @@ Les journaux ne sont pas produits par défaut. Pour les activer lors d'un diagno
 |---|---|
 | Windows | `%APPDATA%\AcrViewer\config.json` |
 | Linux | `~/.config/AcrViewer/config.json` |
+| macOS | `~/Library/Application Support/AcrViewer/config.json` |
 
-Si `"debug_log"` n'existe pas dans le fichier, ajoutez-le.
+Si `"debug_log"` n'existe pas dans le fichier, ajoutez-le. Sous macOS, lancez `AcrViewer.app/Contents/MacOS/AcrViewer` depuis un terminal pour voir les journaux s'y afficher.
 
 ## À propos de la sortie
 
