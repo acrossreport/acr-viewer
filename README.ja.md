@@ -19,7 +19,7 @@ ACR Viewer は、システムトレイに常駐し、監視フォルダや HTTP 
 |---|---|
 | Windows x64 | 対応 |
 | Linux x64 | 対応 |
-| macOS(Apple Silicon) | 対応予定 |
+| macOS(Apple Silicon) | 対応 |
 | macOS(Intel) | 対応予定 |
 
 ### Windows
@@ -39,12 +39,19 @@ sudo apt install libgtk-3-0 libxdo3 libayatana-appindicator3-1
 - 印字は OS の印刷の仕組み(CUPS の `lp` コマンド)で行います。OS に既定のプリンタが設定されていない場合は、設定画面の「印刷先プリンタ名」にプリンタ名を入力してください。登録されているプリンタ名は `lpstat -p` で確認できます
 - トレイのアイコンは、画面上部のバーに表示されます。Ubuntu 以外の GNOME では、AppIndicator の拡張機能が必要です。アイコンが表示されない場合も ACR Viewer は動いていて、ブラウザで `http://localhost:8765/` を開けば設定画面を使えます
 
+### macOS
+
+- 対応:macOS 11(Big Sur)以上、Apple Silicon(arm64)
+- 印字は Linux と同じく OS の印刷の仕組み(CUPS の `lp` コマンド)で行います。OS に既定のプリンタが設定されていない場合は、設定画面の「印刷先プリンタ名」にプリンタ名を入力してください
+- 公証(notarization)を受けていないため、初回起動時に macOS のGatekeeperが「開発元が未確認」と警告します。対処方法は下記の[インストールと起動](#macos-1)をご覧ください
+
 ## ダウンロード
 
 [Releases](https://github.com/acrossreport/acr-viewer/releases) から、お使いの OS 用のファイルをダウンロードしてください。
 
 - Windows x64:`acr_viewer-v0.1.0-win-x64.zip`
 - Linux x64:`acr_viewer-v0.1.0-linux-x64.zip`
+- macOS(Apple Silicon):`acr_viewer-v0.1.0-osx-arm64.zip`
 
 ## インストールと起動
 
@@ -59,6 +66,12 @@ sudo apt install libgtk-3-0 libxdo3 libayatana-appindicator3-1
 1. ダウンロードした zip を任意のフォルダに展開します
 2. 端末でそのフォルダに移動し、`./acr_viewer` を実行します。画面上部のバーにアイコンが表示されます
 3. アイコンをクリックし、メニューから「Web設定画面を開く」を選ぶと、ブラウザで設定画面が開きます(`http://localhost:8765/`)
+
+### macOS
+
+1. ダウンロードした zip を展開し、`AcrViewer.app` を任意のフォルダ(例:`/Applications`)に移動します
+2. 公証を受けていないため、ダブルクリックすると「開発元が未確認」と表示されて起動できません。代わりに `AcrViewer.app` を右クリック(または Control キーを押しながらクリック)し、「開く」を選び、表示されるダイアログでもう一度「開く」をクリックしてください。これは初回のみ必要です
+3. 画面上部のメニューバーにアイコンが表示されます(Dockやアプリスイッチャーには表示されません)。アイコンをクリックし、メニューから「Web設定画面を開く」を選ぶと、ブラウザで設定画面が開きます(`http://localhost:8765/`)
 
 ### フォルダ
 
@@ -140,8 +153,9 @@ HTTP サーバは `0.0.0.0` で待ち受けます。社外のネットワーク�
 |---|---|
 | Windows | `%APPDATA%\AcrViewer\config.json` |
 | Linux | `~/.config/AcrViewer/config.json` |
+| macOS | `~/Library/Application Support/AcrViewer/config.json` |
 
-`"debug_log"` の項目がない場合は、追加してください。
+`"debug_log"` の項目がない場合は、追加してください。macOS では、端末から `AcrViewer.app/Contents/MacOS/AcrViewer` を実行すると、その端末にログが表示されます。
 
 ## 出力について
 
