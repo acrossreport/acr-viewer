@@ -18,7 +18,9 @@ ACR Viewer は、システムトレイに常駐し、監視フォルダや HTTP 
 | OS | 状況 |
 |---|---|
 | Windows x64 | 対応 |
+| Windows ARM64 | 対応 |
 | Linux x64 | 対応 |
+| Linux ARM64 | 対応 |
 | macOS(Apple Silicon) | 対応 |
 | macOS(Intel) | 対応 |
 
@@ -29,7 +31,7 @@ ACR Viewer は、システムトレイに常駐し、監視フォルダや HTTP 
 
 ### Linux
 
-- 対応:Ubuntu 24.04 以上(x64)
+- 対応:Ubuntu 24.04 以上(x64、ARM64)
 - 次のライブラリが必要です。入っていない場合は、次のコマンドでインストールしてください
 
 ```
@@ -50,7 +52,9 @@ sudo apt install libgtk-3-0 libxdo3 libayatana-appindicator3-1
 [Releases](https://github.com/acrossreport/acr-viewer/releases) から、お使いの OS 用のファイルをダウンロードしてください。
 
 - Windows x64:`acr_viewer-v0.1.0-win-x64.zip`
+- Windows ARM64:`acr_viewer-v0.1.0-win-arm64.zip`
 - Linux x64:`acr_viewer-v0.1.0-linux-x64.zip`
+- Linux ARM64:`acr_viewer-v0.1.0-linux-arm64.zip`
 - macOS(Apple Silicon):`acr_viewer-v0.1.0-osx-arm64.zip`
 - macOS(Intel):`acr_viewer-v0.1.0-osx-x64.zip`
 

@@ -18,7 +18,9 @@ ACR Viewer est une application résidant dans la barre d'état système, qui imp
 | OS | Statut |
 |---|---|
 | Windows x64 | Pris en charge |
+| Windows ARM64 | Pris en charge |
 | Linux x64 | Pris en charge |
+| Linux ARM64 | Pris en charge |
 | macOS (Apple Silicon) | Pris en charge |
 | macOS (Intel) | Pris en charge |
 
@@ -29,7 +31,7 @@ ACR Viewer est une application résidant dans la barre d'état système, qui imp
 
 ### Linux
 
-- Pris en charge : Ubuntu 24.04 ou version ultérieure (x64)
+- Pris en charge : Ubuntu 24.04 ou version ultérieure (x64, ARM64)
 - Les bibliothèques suivantes sont nécessaires. Si elles ne sont pas installées, installez-les avec :
 
 ```
@@ -50,7 +52,9 @@ sudo apt install libgtk-3-0 libxdo3 libayatana-appindicator3-1
 Téléchargez le fichier correspondant à votre OS depuis les [Releases](https://github.com/acrossreport/acr-viewer/releases).
 
 - Windows x64 : `acr_viewer-v0.1.0-win-x64.zip`
+- Windows ARM64 : `acr_viewer-v0.1.0-win-arm64.zip`
 - Linux x64 : `acr_viewer-v0.1.0-linux-x64.zip`
+- Linux ARM64 : `acr_viewer-v0.1.0-linux-arm64.zip`
 - macOS (Apple Silicon) : `acr_viewer-v0.1.0-osx-arm64.zip`
 - macOS (Intel) : `acr_viewer-v0.1.0-osx-x64.zip`
 

@@ -18,7 +18,9 @@ ACR Viewer is an application that stays in the system tray and automatically pri
 | OS | Status |
 |---|---|
 | Windows x64 | Supported |
+| Windows ARM64 | Supported |
 | Linux x64 | Supported |
+| Linux ARM64 | Supported |
 | macOS (Apple Silicon) | Supported |
 | macOS (Intel) | Supported |
 
@@ -29,7 +31,7 @@ ACR Viewer is an application that stays in the system tray and automatically pri
 
 ### Linux
 
-- Supported: Ubuntu 24.04 or later (x64)
+- Supported: Ubuntu 24.04 or later (x64, ARM64)
 - The following libraries are required. If they are not installed, install them with:
 
 ```
@@ -50,7 +52,9 @@ sudo apt install libgtk-3-0 libxdo3 libayatana-appindicator3-1
 Download the file for your OS from [Releases](https://github.com/acrossreport/acr-viewer/releases).
 
 - Windows x64: `acr_viewer-v0.1.0-win-x64.zip`
+- Windows ARM64: `acr_viewer-v0.1.0-win-arm64.zip`
 - Linux x64: `acr_viewer-v0.1.0-linux-x64.zip`
+- Linux ARM64: `acr_viewer-v0.1.0-linux-arm64.zip`
 - macOS (Apple Silicon): `acr_viewer-v0.1.0-osx-arm64.zip`
 - macOS (Intel): `acr_viewer-v0.1.0-osx-x64.zip`
 
