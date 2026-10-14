@@ -168,6 +168,7 @@ HTTP サーバは `0.0.0.0` で待ち受けます。社外のネットワーク�
 
 ## 関連リンク
 
+- ACR Samples(サンプルテンプレート・データ。すぐに試せます):https://github.com/acrossreport/acr-samples
 - ACR Designer:https://github.com/acrossreport/acr-designer
 - ACR Generator:https://github.com/acrossreport/acr-generator
 - ACR 仕様(JSON テンプレート):https://github.com/acrossreport/acr-spec

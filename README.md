@@ -168,6 +168,7 @@ If the license is not registered, output (PDF, PNG, printing) includes a waterma
 
 ## Links
 
+- ACR Samples (sample templates/data, try it right away): https://github.com/acrossreport/acr-samples
 - ACR Designer: https://github.com/acrossreport/acr-designer
 - ACR Generator: https://github.com/acrossreport/acr-generator
 - ACR specification (JSON template): https://github.com/acrossreport/acr-spec

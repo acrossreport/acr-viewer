@@ -168,6 +168,7 @@ Si la licence n'est pas enregistrée, la sortie (PDF, PNG, impression) comporte 
 
 ## Liens
 
+- ACR Samples (modèles/données d'exemple, à essayer tout de suite) : https://github.com/acrossreport/acr-samples
 - ACR Designer : https://github.com/acrossreport/acr-designer
 - ACR Generator : https://github.com/acrossreport/acr-generator
 - Spécification ACR (modèle JSON) : https://github.com/acrossreport/acr-spec
