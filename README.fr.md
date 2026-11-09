@@ -164,7 +164,7 @@ Si `"debug_log"` n'existe pas dans le fichier, ajoutez-le. Sous macOS, lancez `A
 
 ## À propos de la sortie
 
-Si la licence n'est pas enregistrée, la sortie (PDF, PNG, impression) comporte un filigrane. Enregistrez votre adresse e-mail et votre clé de licence dans « Enregistrement de la licence » de la page de réglages pour obtenir une sortie sans filigrane. Consultez le [site officiel](https://acrossreport.com) pour plus de détails.
+La sortie (PDF, PNG, impression) est gratuite et sans filigrane.
 
 ## Liens
 

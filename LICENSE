@@ -9,11 +9,9 @@ binary form through https://github.com/acrossreport/acr-viewer.
    You may download, install, and use the Software free of charge, for both
    personal and business purposes.
 
-2. Watermark and License Key
-   Without a registered license key, all output of the Software (PDF, PNG,
-   and printing) includes a watermark. Output without a watermark requires
-   a license key issued by Across Systems Corporation. Terms for license
-   keys are described on the official website (https://acrossreport.com).
+2. Output
+   All output of the Software (PDF, PNG, and printing) is free of charge
+   and free of any watermark.
 
 3. Redistribution
    You may not redistribute the Software to any third party in any form,
@@ -22,13 +20,11 @@ binary form through https://github.com/acrossreport/acr-viewer.
    https://github.com/acrossreport/acr-viewer.
    Copying the Software for installation on multiple computers within your
    own organization is permitted.
-   A license key may not be transferred or shared with any third party.
 
 4. Restrictions
    You may not:
    - reverse engineer, decompile, or disassemble the Software;
-   - modify the Software, or remove or alter the watermark by any means
-     other than registering a valid license key;
+   - modify the Software;
    - remove or alter copyright notices included in the Software.
 
 5. Source Code
@@ -72,11 +68,9 @@ Copyright (c) Across Systems Corporation. All rights reserved.
    本ソフトウェアは、個人・業務を問わず無償でダウンロード、インストール、
    利用できます。
 
-2. ウォーターマークとライセンスキー
-   ライセンスキー未登録の場合、本ソフトウェアのすべての出力（PDF・PNG・
-   印字）にウォーターマークが入ります。ウォーターマークなしで出力するには、
-   Across Systems Corporation が発行するライセンスキーが必要です。
-   ライセンスキーの条件は公式サイト（https://acrossreport.com）をご覧ください。
+2. 出力
+   本ソフトウェアのすべての出力（PDF・PNG・印字）は無償で、ウォーター
+   マークは入りません。
 
 3. 再配布
    本ソフトウェアを、形態を問わず第三者へ再配布することを禁止します
@@ -84,12 +78,10 @@ Copyright (c) Across Systems Corporation. All rights reserved.
    本ソフトウェアの配布は https://github.com/acrossreport/acr-viewer
    のみで行います。
    なお、自組織内の複数のコンピュータへ設置するためのコピーは認めます。
-   ライセンスキーを第三者へ譲渡・共有することはできません。
 
 4. 禁止事項
    - 本ソフトウェアのリバースエンジニアリング、逆コンパイル、逆アセンブル
-   - 本ソフトウェアの改変、および有効なライセンスキーの登録以外の方法による
-     ウォーターマークの除去・改変
+   - 本ソフトウェアの改変
    - 本ソフトウェアに含まれる著作権表示の削除・改変
 
 5. ソースコード

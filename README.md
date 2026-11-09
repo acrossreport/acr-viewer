@@ -164,7 +164,7 @@ If `"debug_log"` is not in the file, add it. On macOS, launch `AcrViewer.app/Con
 
 ## About Output
 
-If the license is not registered, output (PDF, PNG, printing) includes a watermark. Register your email address and license key under "License Registration" on the settings page to output without a watermark. See the [official website](https://acrossreport.com) for details.
+Output (PDF, PNG, printing) is free of charge and free of any watermark.
 
 ## Links
 
